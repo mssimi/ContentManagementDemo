@@ -1,0 +1,13 @@
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+content_management_admin:
+    resource: "@ContentManagementBundle/Resources/config/routing_admin.yml"
+    prefix:   /admin/
+_liip_imagine:
+    resource: "@LiipImagineBundle/Resources/config/routing.xml"
+fos_js_routing:
+    resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
+content_management_page:
+    resource: "@ContentManagementBundle/Resources/config/routing_page.yml"
+    prefix:   /
