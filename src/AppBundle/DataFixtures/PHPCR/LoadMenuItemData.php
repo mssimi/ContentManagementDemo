@@ -26,9 +26,15 @@ class LoadMenuItemData implements FixtureInterface
         $menuItem3->setLabel('About');
         $menuItem3->setLink('/cms/page/about');
 
+        $menuItem4 = clone $menuItem1;
+        $menuItem4->setLabel('Login');
+        $menuItem4->setLink('fos_user_security_login');
+        $menuItem4->setLinkType(MenuItem::linkTypeRoute);
+
         $dm->persist($menuItem1);
         $dm->persist($menuItem2);
         $dm->persist($menuItem3);
+        $dm->persist($menuItem4);
 
         // footer menu 1
         $root = $dm->find(null, 'cms/menu/footer-menu-1');
