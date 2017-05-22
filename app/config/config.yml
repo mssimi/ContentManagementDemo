@@ -42,6 +42,13 @@ twig:
         - 'bootstrap_3_layout.html.twig'
         - 'VichUploaderBundle:Form:fields.html.twig'
 
+doctrine_cache:
+    providers:
+        phpcr_meta:
+            type: file_system
+        phpcr_nodes:
+            type: file_system
+
 # Doctrine Configuration
 doctrine:
     dbal:
@@ -93,6 +100,9 @@ doctrine_phpcr:
             type: doctrinedbal
             logging: true
             profiling: true
+            caches:
+                meta: doctrine_cache.providers.phpcr_meta
+                nodes: doctrine_cache.providers.phpcr_nodes
         workspace: default
     odm:
         auto_mapping: true
