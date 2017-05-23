@@ -13,7 +13,7 @@ services:
 #    ports:
 #      - ${WEBSERVER_PORT}:80
     environment:
-      - VIRTUAL_HOST=cm-demo.dev
+      - VIRTUAL_HOST=${VIRTUAL_HOST}
     network_mode: bridge
     links:
       - cm-demo-php-fpm

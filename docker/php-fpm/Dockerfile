@@ -11,8 +11,7 @@ RUN apk upgrade --update \
     && php composer-setup.php \
     && php -r "unlink('composer-setup.php');" \
     && mv composer.phar /usr/bin/composer \
-    && pecl install apcu-4.0.11 \
-    && docker-php-ext-enable --ini-name apcu.so opcache.so \
+    && docker-php-ext-enable opcache.so \
     && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
     && docker-php-ext-install mcrypt intl pdo pdo_mysql imap soap xml xsl zip bcmath curl json mbstring exif gd \
     && docker-php-ext-install opcache \
